@@ -6,7 +6,7 @@ using std::endl;
 int main(){
   int board[8][8] =  {0}; //Initialize our board to a 2D 8*8 int array object with null values.
   int row = 0, col = 0; //Iniitialize our row and col variables to 0, each respectively reprsenting the boards row and the boards col.
-  board[0][0] = 1; //Place the first queen in the first position of the board
+  board[row][col] = 1; //Place the first queen in the first position of the board
 
   nextCol: //this label will be used to bring us back to the nextCol
   ++col; //since we already placed our queen in the first col, we want to start out by shifting to the next col.
@@ -73,8 +73,5 @@ int main(){
   cout << endl;
 
   goto backtrack; //backtrack after printing to see if there are most possible solutions
-
-
-  return 0;
 
 }
