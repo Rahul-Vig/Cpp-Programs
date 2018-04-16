@@ -8,7 +8,7 @@ int main(){
   int n, c = 0;
   cout << "Enter the number of Queens you want to determine a solution for: ";
   cin >> n;
-  int* q = new int[n];
+  int q[n] = {};
   q[c] = 0;
 
 nextCol:
@@ -37,7 +37,7 @@ nextRow:
 backtrack:
   --c;
   if(c == -1){
-    delete[] q;
+    //delete[] q;
     return 0;
   }
 
