@@ -10,23 +10,35 @@ int main(){
 	//vector<string> in{"10","0111","100","111","1","00111"};
 
 	int num_frags=in.size();
+	cout << "Num Frags: " << num_frags << endl;
 	int num_bits=0;
 	for(string i:in)
 		num_bits+=i.length();
 
+	cout << "Num Bits: " << num_bits << endl;
 	int num_files=num_frags/2;
+
+	cout << "Num Files: " << num_files << endl;
+
 	int file_size=num_bits/num_files;
 
+	cout << "File Size: " << file_size << endl;
+
 	map<string, int> d;
-	for(string i:in)
+	for(string i:in){
+		cout << "i: " << i << endl;
 		for(string j:in){
+			cout << "j: " << j << endl;
 			string s=i+j;
-			if (s.size()==file_size)
+			if (s.size()==file_size){
+			cout << "s: "<<s << endl;
 				if(d.find(s)==d.end())
 					d[s]=1;
 				else
 					d[s]++;
-	     }
+	   }
+		}
+	}
 
 	// find the max element of the map
 	int max=0;
